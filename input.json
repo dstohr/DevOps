@@ -1,0 +1,17 @@
+[
+    {
+            "name": "ubuntu-16.04",
+            "image": "ubuntu",
+            "tag": "16.04",
+            "volumes":  {"/tmp/docker": {"bind": "/tmp_host"}},    
+            "cmd": "/bin/sh -c \"echo 'hello world' >> /tmp_host/hello.txt\""
+    },
+    {
+            "name": "custom-web",
+            "dockerfile": "./Dockerfile",
+            "ports": {"80":"80"},
+            "volumes": {"/tmp/webcontent": {"bind": "/var/www/html"}}
+    } 
+    
+]
+    
