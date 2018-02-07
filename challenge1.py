@@ -33,7 +33,7 @@ def startContainers(inputJSON):
             el['image'] = tag = el['name']
         else:
             print("No image supplied")
-            break
+            continue
 
         cli.containers.run(detach=True, **el)
 
